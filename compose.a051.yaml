@@ -1,0 +1,11 @@
+services:
+  a051:
+    build:
+      context: .
+      dockerfile: Dockerfile.a051
+    ports:
+      - "7861:7861"
+    volumes:
+      - ./weights:/app/weights:ro
+      - ./outputs/cloud:/app/outputs
+    restart: unless-stopped
